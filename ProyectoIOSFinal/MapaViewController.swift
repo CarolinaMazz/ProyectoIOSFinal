@@ -20,9 +20,10 @@ class MapaViewController: UIViewController, MKMapViewDelegate {
         
         ListarTiendasWS.ListarTiendas { (resultado) in
             self.tiendas = resultado
+            self.mapa.reloadInputViews()
         }
         
-        //print(tiendas[0].latitud)
+        print(tiendas)
             
         //let location = CLLocation(latitude: tiendas[0].latitud, longitude: tiendas[0].longitud)
             
@@ -64,7 +65,6 @@ class MapaViewController: UIViewController, MKMapViewDelegate {
             view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure) as UIView!
             view.detailCalloutAccessoryView = UIButton(type: .detailDisclosure) as UIView!
             view.canShowCallout = true
-            view.calloutOffset = CGPoint(x: 0, y: -10)
             
         }
         return view

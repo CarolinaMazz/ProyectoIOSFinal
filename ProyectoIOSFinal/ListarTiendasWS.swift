@@ -21,7 +21,7 @@ class ListarTiendasWS: NSObject {
             
             let json = JSON(response.result.value)
             
-            print(json[0]["Latitud"])
+            //print(json[0]["Latitud"])
             
             for i in 0..<json.count{
                 let listTiendas = TiendasEnt()
@@ -34,7 +34,7 @@ class ListarTiendasWS: NSObject {
                 resultadoT.append(listTiendas)
             }
             //TERMINO
-            print(resultadoT)
+            //print(resultadoT)
             completion(resultadoT)
         }
         
